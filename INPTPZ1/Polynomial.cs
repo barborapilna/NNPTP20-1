@@ -36,10 +36,8 @@ namespace INPTPZ1
 
                     coefficient = coefficient.Multiply(evaluation);
                 }
-
                 result = result.Add(coefficient);
             }
-
             return result;
         }
 
