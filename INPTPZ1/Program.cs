@@ -13,7 +13,6 @@ using System.Drawing.Text;
 using System.Drawing.Drawing2D;
 using System.Linq.Expressions;
 using System.Threading;
-using INPTPZ1.Mathematics;
 
 namespace INPTPZ1
 {
@@ -36,7 +35,6 @@ namespace INPTPZ1
                 doubleargs[i] = double.Parse(args[i + 2]);
             }
             string output = args[6];
-            // TODO: add parameters from args?
             Bitmap bmp = new Bitmap(intargs[0], intargs[1]);
             double xmin = doubleargs[0];
             double xmax = doubleargs[1];
@@ -47,12 +45,10 @@ namespace INPTPZ1
             double ystep = (ymax - ymin) / intargs[1];
 
             List<ComplexNumber> koreny = new List<ComplexNumber>();
-            // TODO: poly should be parameterised?
             Polynomial p = new Polynomial();
             p.Coefficients.Add(new ComplexNumber() { Real = 1 });
             p.Coefficients.Add(ComplexNumber.Zero);
             p.Coefficients.Add(ComplexNumber.Zero);
-            //p.Coe.Add(Cplx.Zero);
             p.Coefficients.Add(new ComplexNumber() { Real = 1 });
             Polynomial pd = p.Derive();
 

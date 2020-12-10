@@ -1,17 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using INPTPZ1.Mathematics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace INPTPZ1.Mathematics.Tests
+namespace INPTPZ1.Tests
 {
     [TestClass()]
     public class ComplexNumberTest
     {
-
         [TestMethod()]
         public void AddTest()
         {
