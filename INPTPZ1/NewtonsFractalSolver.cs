@@ -29,6 +29,11 @@ namespace INPTPZ1
         private Polynomial derivation;
         private List<ComplexNumber> roots;
 
+        private readonly Color[] colors = new Color[]
+        {
+            Color.Red, Color.Blue, Color.Green, Color.Yellow, Color.Orange, Color.Fuchsia, Color.Gold, Color.Cyan, Color.Magenta
+        };
+
         public void ParseArguments(string[] args)
         {
             if (args.Length >= minNumberOfArguments)
@@ -128,11 +133,6 @@ namespace INPTPZ1
 
             return numberOfRoots;
         }
-
-        private readonly Color[] colors = new Color[]
-        {
-            Color.Red, Color.Blue, Color.Green, Color.Yellow, Color.Orange, Color.Fuchsia, Color.Gold, Color.Cyan, Color.Magenta
-        };
 
         private Color PickPixelColor(int numberOfIterations, int numberOfRoots)
         {
