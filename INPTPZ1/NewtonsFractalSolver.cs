@@ -46,31 +46,34 @@ namespace INPTPZ1
                 {
                     inputParameters[i] = double.Parse(args[i + 2]);
                 }
-
                 fileName = args[6];
-
-                image = new Bitmap(imageWidth, imageHeight);
-                xMin = inputParameters[0];
-                xMax = inputParameters[1];
-                yMin = inputParameters[2];
-                yMax = inputParameters[3];
-
-                xStep = (xMax - xMin) / imageWidth;
-                yStep = (yMax - yMin) / imageHeight;
-
-                roots = new List<ComplexNumber>();
-
-                polynomial = new Polynomial();
-                polynomial.Coefficients.Add(new ComplexNumber() { Real = 1 });
-                polynomial.Coefficients.Add(ComplexNumber.Zero);
-                polynomial.Coefficients.Add(ComplexNumber.Zero);
-                polynomial.Coefficients.Add(new ComplexNumber() { Real = 1 });
-                derivation = polynomial.Derive();
+                ProceessParsedArguments(inputParameters);
             }
             else
             {
                 throw new ArgumentException("There must be at least " + minNumberOfArguments + " arguments!");
             }
+        }
+
+        private void ProceessParsedArguments(double[] inputParameters)
+        {
+            image = new Bitmap(imageWidth, imageHeight);
+            xMin = inputParameters[0];
+            xMax = inputParameters[1];
+            yMin = inputParameters[2];
+            yMax = inputParameters[3];
+
+            xStep = (xMax - xMin) / imageWidth;
+            yStep = (yMax - yMin) / imageHeight;
+
+            roots = new List<ComplexNumber>();
+
+            polynomial = new Polynomial();
+            polynomial.Coefficients.Add(new ComplexNumber() { Real = 1 });
+            polynomial.Coefficients.Add(ComplexNumber.Zero);
+            polynomial.Coefficients.Add(ComplexNumber.Zero);
+            polynomial.Coefficients.Add(new ComplexNumber() { Real = 1 });
+            derivation = polynomial.Derive();
         }
 
         private ComplexNumber FindPixelCoordinates(int i, int j)
